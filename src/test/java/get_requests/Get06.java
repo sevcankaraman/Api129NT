@@ -5,27 +5,12 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
+import org.testng.asserts.SoftAssert;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
-public class Get06 extends HerOkuAppBaseUrl {
-     /*
-  Given
-      https://restful-booker.herokuapp.com/booking/23
-  Whenpackage get_requests;
-
-import base_urls.HerOkuAppBaseUrl;
-import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import org.junit.Test;
-
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertEquals;
 
 public class Get06 extends HerOkuAppBaseUrl {
 
@@ -88,13 +73,29 @@ public class Get06 extends HerOkuAppBaseUrl {
         assertEquals("2019-01-01",jsonPath.getString("bookingdates.checkout"));
         assertEquals("midnight snack",jsonPath.getString("additionalneeds"));
 
-        //3.yol:testng soft assertion
 
+        //3. Yol: TestNG Soft Assertion
+        //Soft Assertion adımları:
 
+        //1. Soft assert objesi oluştur
+        SoftAssert softAssert = new SoftAssert();
 
+        //2. Assertion yap
+        softAssert.assertEquals(jsonPath.getString("firstname"),"Josh","firstname uyuşmadı");
+        softAssert.assertEquals(jsonPath.getString("lastname"),"Allen","lastname uyuşmadı");
+        softAssert.assertEquals(jsonPath.getInt("totalprice"),111,"totalprice uyuşmadı");
+        softAssert.assertTrue(jsonPath.getBoolean("depositpaid"),"depositpaid uyuşmadı");
+        softAssert.assertEquals(jsonPath.getString("bookingdates.checkin"),"2018-01-01","checkin uyuşmadı");
+        softAssert.assertEquals(jsonPath.getString("bookingdates.checkout"),"2019-01-01","checkout uyuşmadı");
+        softAssert.assertEquals(jsonPath.getString("additionalneeds"),"super bowls","additionalneeds uyuşmadı");
 
-
+        //3. assertAll() methodunu kullan
+        softAssert.assertAll();
 
     }
-
 }
+
+
+
+
+

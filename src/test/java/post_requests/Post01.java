@@ -13,7 +13,8 @@ import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertFalse;
 
-public class Post01 extends JsonPlaceHolderBaseUrl { /*
+public class Post01 extends JsonPlaceHolderBaseUrl {
+    /*
     Given
       1)  https://jsonplaceholder.typicode.com/todos
       2)  {
@@ -54,6 +55,7 @@ public class Post01 extends JsonPlaceHolderBaseUrl { /*
         //Do assertion
         assertEquals(201, response.statusCode());
         JsonPath jsonPath = response.jsonPath();
+        //assert kısmında hard kod kullanmamaya özen gösteriniz
         assertEquals(55, jsonPath.getInt("userId"));
         assertEquals("Tidy your room", jsonPath.getString("title"));
         assertFalse(jsonPath.getBoolean("completed"));

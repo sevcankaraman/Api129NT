@@ -66,7 +66,8 @@ public class Put01 extends JsonPlaceHolderBaseUrl {
         spec.pathParams("first", "todos", "second", 198);
 
         //Set the expected data
-        Map<String , Object> expectedData = new JsonPlaceHolderTestData().expectedDataMapMethod(21,"Wash the dishes",false);
+        Map<String , Object> expectedData = new JsonPlaceHolderTestData()//JsonPlaceHolderTestData classında bulunan expectedDataMapMethod'unu çağırarak expectedData'yı oluşturduk.
+                                            .expectedDataMapMethod(21,"Wash the dishes",false);
         System.out.println("expectedData = " + expectedData);
 
         //Send the request and get the response

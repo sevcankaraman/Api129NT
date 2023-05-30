@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertTrue;
 
-public class Get05 extends HerOkuAppBaseUrl {
+public class  Get05 extends HerOkuAppBaseUrl {
        /*
         Given
             https://restful-booker.herokuapp.com/booking

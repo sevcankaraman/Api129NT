@@ -37,7 +37,7 @@ public class Get07 extends JsonPlaceHolderBaseUrl {
 
         //Send the request and get the response
         Response response = given(spec).get("{first}");
-        response.prettyPrint();
+        //response.prettyPrint();
 
         //Do assertion
         assertEquals(200, response.statusCode());
