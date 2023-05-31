@@ -5,22 +5,17 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
-public class HerOkuAppBaseUrl {
+
+public class ReqresInBaseUrl {
 
     protected RequestSpecification spec;
 
     @Before
     public void setUp() {
-
-        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).setBaseUri("https://restful-booker.herokuapp.com/").build();
+        spec = new RequestSpecBuilder().
+                setContentType(ContentType.JSON).
+                setBaseUri("https://reqres.in/api/").
+                build();
 
     }
-
 }
-
-
-
-
-
-
-
