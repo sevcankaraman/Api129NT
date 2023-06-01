@@ -2,7 +2,7 @@ package pojos;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties(ignoreUnknown = true)// tanınmayanları ignore et yani görmezden gel
 public class JsonPlaceHolderPojo {
 
     //1: private variable'lar oluşturunuz

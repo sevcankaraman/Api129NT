@@ -58,8 +58,11 @@ public class Get03 {
 
     }
 
-//Tek body() methodu içinde çoklu assertion yaparak "soft assertion" yapabiliriz. Tüm fail durumları hakkında bilgi alabiliriz.
-//Çoklu body() methodları içinde tek assertion yaparak "hard assertion" yaparız. İlk fail durumunda çalışma durur ve sonraki assetionlar hakkında bilgi alamayız.
+//Tek body() methodu içinde çoklu assertion yaparak "soft assertion" yapabiliriz.
+// Tüm fail durumları hakkında bilgi alabiliriz.
+
+//Çoklu body() methodları içinde tek assertion yaparak "hard assertion" yaparız.
+// İlk fail durumunda çalışma durur ve sonraki assetionlar hakkında bilgi alamayız.
 
 
 }

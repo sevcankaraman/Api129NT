@@ -33,11 +33,7 @@ public class Task02 extends HerOkuAppBaseUrl {
         //Do assertıon
         assertEquals(200,response.statusCode());
         assertTrue(response.asString().contains("bookingid"));
-
-
-
     }
-
 
 
 }

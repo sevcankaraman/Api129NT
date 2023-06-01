@@ -44,7 +44,7 @@ public class Post03 extends JsonPlaceHolderBaseUrl {
         Response response = given(spec).body(expectedData).post("{first}");
         response.prettyPrint();
 
-        //Do assertion
+         //Do assertion
         JsonPlaceHolderPojo actualData = response.as(JsonPlaceHolderPojo.class);
         System.out.println("actualData = " + actualData);
 
