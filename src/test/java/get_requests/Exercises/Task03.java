@@ -1,47 +1,31 @@
 package get_requests.Exercises;
 
 import base_urls.JsonPlaceHolderBaseUrl;
+import base_urls.ReqresInBaseUrl;
 import org.junit.Test;
 
-public class Task03 extends JsonPlaceHolderBaseUrl {
+public class Task03 extends ReqresInBaseUrl {
 
-    //3)
+//1)
 
-/*
-   "https://petstore.swagger.io/" dökümanını kullanarak 'user' oluşturacak bir otomasyon testi yazınız
-    Not: Test Case'i gherkin language ile yazınız.
-*/
+  /*
+       Given
+              https://reqres.in/api/unknown/
+       When
+            I send GET Request to the URL
+       Then
 
-     /*
-        Given
-            1) https://petstore.swagger.io/v2/user
-            2) {
-                  "username": "JohnDoe",
-                  "firstName": "John",
-                  "lastName": "Doe",
-                  "email": "john@doe.com",
-                  "password": "1234",
-                  "phone": "1234",
-                  "userStatus": 123
-                }
-        When
-            I send POST Request to the Url
-        Then
-            Status code is 200
-            And response body should be like {
-                                                "code": 200,
-                                                "type": "unknown",
-                                                "message": "6874988058"
-                                             }
-     */
-
-    @Test
-    public void post01(){
-        //Set the url
-        spec.pathParam("first","user");
-
-
-    }
-
+            1)Status code is 200
+            2)Print all pantone_values
+              (Tüm pantone_value değerlerini yazdırınız)
+            3)Print all ids greater than 3 on the console
+              (3'ten büyük id'leri yazdırınız)
+              Assert that there are 3 ids greater than 3
+              (3'ten büyük 3 adet id olduğunu doğrulayınız)
+            4)Print all names whose ids are less than 3 on the console
+              (id'si 3'ten küçük isimleri yazdırınız)
+              Assert that the number of names whose ids are less than 3 is 2
+              (id'si 3'ten küçük 2 isim olduğunu doğrulayınız)
+    */
 
 }

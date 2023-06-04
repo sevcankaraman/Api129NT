@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.testng.asserts.SoftAssert;
 
 import static io.restassured.RestAssured.given;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class Task02_Soru2 extends ReqresInBaseUrl {
     //2)
@@ -46,13 +47,20 @@ public class Task02_Soru2 extends ReqresInBaseUrl {
         Response response =given(spec).when().get("{first}/{second}");
         response.prettyPrint();
 
-
-        JsonPath jsonPath=response.jsonPath();
-
         //Do assertıon
+        JsonPath jsonPath=response.jsonPath();
         SoftAssert softAssert=new SoftAssert();
 
+        softAssert.assertEquals(response.getStatusCode(),200);
+        softAssert.assertEquals(response.contentType(),"application/json; charset=utf-8");
+        softAssert.assertEquals(jsonPath.getInt("data.id"),3);
+        softAssert.assertEquals(jsonPath.getString("data.name"),"true red");
+        softAssert.assertEquals(jsonPath.getInt("data.year"),2002);
+        softAssert.assertEquals(jsonPath.getString("data.color"),"#BF1932");
+        softAssert.assertEquals(jsonPath.getString("support.url"),"https://reqres.in/#support-heading");
+        softAssert.assertEquals(jsonPath.getString("support.text"),"To keep ReqRes free, contributions towards server costs are appreciated!");
 
+        softAssert.assertAll();
 
     }
 

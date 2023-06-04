@@ -47,7 +47,7 @@ And
         response.prettyPrint();
 
         //Do assertion
-        BookingPojo actualData = response.as(BookingPojo.class);
+        BookingPojo actualData = response.as(BookingPojo.class);//De-serilazition
         System.out.println("actualData = " + actualData);
 
         assertEquals(200, response.statusCode());

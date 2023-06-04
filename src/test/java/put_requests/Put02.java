@@ -1,6 +1,7 @@
 package put_requests;
 
 import base_urls.DummyRestApiBaseUrl;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.DummyRestApiDataPojo;
@@ -77,7 +78,7 @@ public class Put02 extends DummyRestApiBaseUrl {
         System.out.println("expectedData = " + expectedData);
 
         //Send the request and get the response
-        Response response = given(spec).body(expectedData).put("{first}/{second}");
+        Response response = given(spec).contentType(ContentType.JSON).body(expectedData).put("{first}/{second}");
         response.prettyPrint();
 
         //Do assertion
