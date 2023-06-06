@@ -56,7 +56,7 @@ public class C03_PutRequest extends HerOkuAppBaseUrl {
 
         //Set the expected data
         BookingDatesPojo bookingDatesPojo = new BookingDatesPojo("2018-01-01", "2019-01-01");
-        BookingPojo expectedData = new BookingPojo("Ali", "Can", 100, true, bookingDatesPojo, "Dinner");
+        BookingPojo expectedData = new BookingPojo("Ali", "Can", 222, true, bookingDatesPojo, "Dinner");
         System.out.println("expectedData = " + expectedData);
 
         //Send the request and get the response
